@@ -35,8 +35,8 @@ app.get('/messages/:id', routes.get_message);
 app.post('/messages/:id', routes.post_message);
 
 var options = {
-	key: fs.readFileSync('./keys/server.key'),
-	cert: fs.readFileSync('./keys/server.crt')
+	key: fs.readFileSync('./keys_INSECURE/server.key'),
+	cert: fs.readFileSync('./keys_INSECURE/server.crt')
 };
 
 https.createServer(options, app).listen(app.get('port'), function(){
